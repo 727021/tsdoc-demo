@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-This app is built with Vite and React, with components from React-Bootstrap.
+This app is built with [Vite](https://vitejs.dev/) and [React](https://react.dev/), with components from [React-Bootstrap](https://react-bootstrap.github.io/).
 
 This app lets you search for and share "dad jokes" from https://icanhazdadjoke.com/.
 
