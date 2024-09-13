@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-This app is built with Vite and React. Styles are from Bootstrap (because it's quick and easy).
+This app is built with Vite and React, with components from React-Bootstrap.
 
 This app lets you search for and share "dad jokes" from https://icanhazdadjoke.com/.
 
