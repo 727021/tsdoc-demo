@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Root from './routes/root'
 import Index from './routes/index'
 import Joke from './routes/joke'
+import Search from './routes/search'
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
         element: <Index />,
       }
     ]
+  },
+  {
+    path: '/search',
+    element: <Search />,
   },
   {
     path: '/:jokeId',
