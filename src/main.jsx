@@ -14,22 +14,22 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Index />,
+        element: <Index />
+      },
+      {
+        path: '/search',
+        element: <Search />
+      },
+      {
+        path: '/:jokeId',
+        element: <Joke />
       }
     ]
-  },
-  {
-    path: '/search',
-    element: <Search />,
-  },
-  {
-    path: '/:jokeId',
-    element: <Joke />,
   }
 ])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>,
+  </StrictMode>
 )

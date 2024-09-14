@@ -6,7 +6,7 @@ export const getJoke = async (options = {}) => {
         headers: {
             Accept: 'application/json',
             ...options.headers
-        },
+        }
     })
     const data = await response.json()
     return data
@@ -18,7 +18,7 @@ export const getJokeById = async (jokeId, options = {}) => {
         headers: {
             Accept: 'application/json',
             ...options.headers
-        },
+        }
     })
     const data = await response.json()
     return data
@@ -26,9 +26,11 @@ export const getJokeById = async (jokeId, options = {}) => {
 
 export const getJokeSearch = async (searchTerm, page = 1, options = {}) => {
     const response = await fetch(`${baseUrl}search?term=${searchTerm}&page=${page}`, {
+        ...options,
         headers: {
             Accept: 'application/json',
-        },
+            ...options.headers
+        }
     })
     const data = await response.json()
     return data
