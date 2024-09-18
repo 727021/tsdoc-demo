@@ -4,7 +4,12 @@ const Joke = () => {
   const params = useParams()
 
   return (
-    <div>Joke: {params.jokeId}</div>
+    <div>
+      Joke: {params.jokeId}
+      {/* Joke image */}
+      {/* Joke text */}
+      {/* Sharing links */}
+    </div>
   )
 }
 
