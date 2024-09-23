@@ -4,7 +4,6 @@ import Card from 'react-bootstrap/Card'
 import { ArrowClockwise } from 'react-bootstrap-icons'
 import { getJoke } from '../utils/api'
 import SearchBar from '../components/SearchBar'
-import { shorten } from '../utils/shorten'
 
 const Index = () => {
   const [joke, setJoke] = useState('')
@@ -33,13 +32,13 @@ const Index = () => {
           </Button>
         </Card.Header>
         <Card.Body>
-          <Card.Text>
-            {joke && shorten(joke.joke)}
+          <Card.Text className="text-truncate">
+            {joke.joke}
           </Card.Text>
         </Card.Body>
-        <Card.Footer>
+        <Card.Footer className="text-end">
           <a href={`/${joke.id}`}>
-            Read more
+            See more
           </a>
         </Card.Footer>
       </Card>

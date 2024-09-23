@@ -1,10 +1,13 @@
 const baseUrl = 'https://icanhazdadjoke.com/'
+// https://icanhazdadjoke.com/api#custom-user-agent
+const userAgent = 'TSDoc Demo (https://github.com/727021/tsdoc-demo)'
 
 export const getJoke = async (options = {}) => {
     const response = await fetch(baseUrl, {
         ...options,
         headers: {
             Accept: 'application/json',
+            'User-Agent': userAgent,
             ...options.headers
         }
     })
@@ -17,6 +20,7 @@ export const getJokeById = async (jokeId, options = {}) => {
         ...options,
         headers: {
             Accept: 'application/json',
+            'User-Agent': userAgent,
             ...options.headers
         }
     })
@@ -29,6 +33,7 @@ export const getJokeSearch = async (searchTerm, page = 1, options = {}) => {
         ...options,
         headers: {
             Accept: 'application/json',
+            'User-Agent': userAgent,
             ...options.headers
         }
     })

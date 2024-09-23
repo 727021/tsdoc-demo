@@ -6,9 +6,9 @@ const Joke = () => {
   return (
     <div>
       Joke: {params.jokeId}
-      {/* Joke image */}
-      {/* Joke text */}
+      {/* Full joke text */}
       {/* Sharing links */}
+      {/* Image download link */}
     </div>
   )
 }

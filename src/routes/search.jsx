@@ -4,6 +4,7 @@ const Search = () => {
       Search
       {/* Search bar */}
       {/* Search results */}
+      {/* Pagination */}
     </div>
   )
 }
