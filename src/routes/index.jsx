@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card'
 import { ArrowClockwise } from 'react-bootstrap-icons'
 import { getJoke } from '../utils/api'
 import SearchBar from '../components/SearchBar'
+import { Link } from 'react-router-dom'
 
 const Index = () => {
   const [joke, setJoke] = useState(null)
@@ -39,9 +40,9 @@ const Index = () => {
         </Card.Body>
         <Card.Footer className="text-end">
           {joke && (
-            <a href={`/${joke.id}`}>
+            <Link to={`/${joke.id}`}>
               See more
-            </a>
+            </Link>
           )}
         </Card.Footer>
       </Card>
