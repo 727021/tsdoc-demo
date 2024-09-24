@@ -1,9 +1,9 @@
+import { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import Stack from 'react-bootstrap/Stack'
 import Pagination from 'react-bootstrap/Pagination'
 import ListGroup from 'react-bootstrap/ListGroup'
 import SearchBar from '../components/SearchBar'
-import { useEffect, useState } from 'react'
 import { getJokeSearch } from '../utils/api'
 
 const PaginationItem = ({ query, page, active }) => {
@@ -27,15 +27,15 @@ const PaginationItem = ({ query, page, active }) => {
 }
 
 const Search = () => {
-  const [ params ] = useSearchParams()
-  
+  const [params] = useSearchParams()
+
   const query = params.get('query')
   const page = parseInt(params.get('page') || '1', 10)
 
   const [searchResult, setSearchResult] = useState(null)
 
   useEffect(() => {
-    ;(async () => {
+    (async () => {
       const newResults = await getJokeSearch(query, page)
       setSearchResult(newResults)
     })()

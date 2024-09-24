@@ -15,8 +15,8 @@ This app lets you search for and share "dad jokes" from https://icanhazdadjoke.c
 
 ## Navigating
 
-There are tags in this repo for the different stages of this demo, including:
-- JavaScript
-- JavaScript + JSDoc
-- JSDoc + TypeScript Definitions
-- TypeScript
+There are tags in this repo for the different stages of this demo:
+- [JavaScript](https://github.com/727021/tsdoc-demo/tree/JS)
+- [JavaScript + JSDoc](https://github.com/727021/tsdoc-demo/tree/JSDoc)
+- [JSDoc + TypeScript Definitions](https://github.com/727021/tsdoc-demo/tree/TSDoc)
+- [TypeScript](https://github.com/727021/tsdoc-demo/tree/TS)
