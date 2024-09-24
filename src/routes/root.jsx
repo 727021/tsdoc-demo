@@ -20,7 +20,7 @@ const Root = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Container className="my-4 flex-grow-1">
+      <Container className="my-4 flex-grow-1 d-flex flex-column">
         <Outlet />
       </Container>
       <div className="bg-body-tertiary py-5">

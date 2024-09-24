@@ -25,6 +25,7 @@ const Index = () => {
         method="GET"
         action="/search"
         name="query"
+        className="w-50"
       />
       <Card className="w-50">
         <Card.Header className="d-flex justify-content-between align-items-center">

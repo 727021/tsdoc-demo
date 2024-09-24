@@ -1,9 +1,9 @@
-import { Button, InputGroup } from "react-bootstrap";
-import { Form } from "react-router-dom";
+import { Button, InputGroup } from 'react-bootstrap'
+import { Form } from 'react-router-dom'
 
-const SearchBar = ({ value, onChange, name, ...props }) => {
+const SearchBar = ({ value, onChange, name, defaultValue, ...props }) => {
     return (
-        <Form navigate {...props} className={`w-50 ${props.className ?? ''}`}>
+        <Form navigate {...props}>
             <InputGroup className="w-100">
                 <input
                     type="text"
@@ -14,10 +14,13 @@ const SearchBar = ({ value, onChange, name, ...props }) => {
                     value={value}
                     onChange={onChange}
                     name={name}
+                    required
+                    defaultValue={defaultValue}
                 />
                 <Button
                     variant="outline-secondary"
                     id="button-search"
+                    type="submit"
                 >
                     Search
                 </Button>
@@ -26,4 +29,4 @@ const SearchBar = ({ value, onChange, name, ...props }) => {
     )
 }
 
-export default SearchBar;
+export default SearchBar
