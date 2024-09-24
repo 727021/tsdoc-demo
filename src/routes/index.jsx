@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
-import { Button, Stack } from 'react-bootstrap'
+import Stack from 'react-bootstrap/Stack'
+import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import { ArrowClockwise } from 'react-bootstrap-icons'
 import { getJoke } from '../utils/api'
 import SearchBar from '../components/SearchBar'
 
 const Index = () => {
-  const [joke, setJoke] = useState('')
+  const [joke, setJoke] = useState(null)
 
   useEffect(() => {
     loadJoke()
@@ -33,13 +34,15 @@ const Index = () => {
         </Card.Header>
         <Card.Body>
           <Card.Text className="text-truncate">
-            {joke.joke}
+            {joke?.joke}
           </Card.Text>
         </Card.Body>
         <Card.Footer className="text-end">
-          <a href={`/${joke.id}`}>
-            See more
-          </a>
+          {joke && (
+            <a href={`/${joke.id}`}>
+              See more
+            </a>
+          )}
         </Card.Footer>
       </Card>
     </Stack>
