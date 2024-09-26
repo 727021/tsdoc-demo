@@ -2,6 +2,7 @@
   "compilerOptions": {
     "checkJs": true,
     "noEmit": true,
-    "jsx": "preserve"
+    "jsx": "react-jsx",
+    "lib": ["ESNext", "DOM"],
   }
 }

@@ -10,14 +10,11 @@ const Root = () => {
       <Navbar className="bg-body-tertiary">
         <Container>
           <Navbar.Brand to="/" as={Link}>DadJS</Navbar.Brand>
-          <Navbar.Toggle />
-          <Navbar.Collapse className="justify-content-end">
-            <Nav>
-              <Nav.Link href="https://github.com/727021/tsdoc-demo" target="_blank">
-                <Github size="24" />
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
+          <Nav>
+            <Nav.Link href="https://github.com/727021/tsdoc-demo" target="_blank">
+              <Github size="24" />
+            </Nav.Link>
+          </Nav>
         </Container>
       </Navbar>
       <Container className="my-4 flex-grow-1 d-flex flex-column">

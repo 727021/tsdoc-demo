@@ -6,12 +6,10 @@ import Card from 'react-bootstrap/Card'
 import { ArrowClockwise } from 'react-bootstrap-icons'
 import { getJoke } from '../utils/api'
 import SearchBar from '../components/SearchBar'
-
-/** @import { JokeResponse } from '../../types/api' */
+import type { JokeResponse } from '../utils/api'
 
 const Index = () => {
-  /** @type {ReturnType<typeof useState<null | JokeResponse>>} */
-  const [joke, setJoke] = useState(null)
+  const [joke, setJoke] = useState<JokeResponse>(null)
 
   useEffect(() => {
     loadJoke()

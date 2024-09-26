@@ -4,14 +4,28 @@ const userAgent = 'TSDoc Demo (https://github.com/727021/tsdoc-demo)'
 
 const JOKES_PER_PAGE = 10
 
-/** @import { JokeResponse, JokeSearchResponse } from '../../types/api' */
+export type Joke = {
+  id: string
+  joke: string
+}
 
-/**
- * Fetch a random joke
- * @param {RequestInit} [options]
- * @returns {Promise<JokeResponse>}
- */
-export const getJoke = async (options = {}) => {
+export type JokeResponse = Joke & {
+  status: number
+}
+
+export type JokeSearchResponse = {
+ current_page: number
+ limit: number
+ next_page: number
+ previous_page: number
+ search_term: string
+ status: number
+ total_jokes: number
+ total_pages: number
+ results: Joke[]
+}
+
+export const getJoke = async (options: RequestInit = {}): Promise<JokeResponse> => {
   const response = await fetch(baseUrl, {
     ...options,
     headers: {
@@ -24,13 +38,7 @@ export const getJoke = async (options = {}) => {
   return data
 }
 
-/**
- * Fetch a joke by id
- * @param {string} jokeId
- * @param {RequestInit} [options]
- * @returns {Promise<JokeResponse>}
- */
-export const getJokeById = async (jokeId, options = {}) => {
+export const getJokeById = async (jokeId: string, options: RequestInit = {}): Promise<JokeResponse> => {
   const response = await fetch(`${baseUrl}j/${jokeId}`, {
     ...options,
     headers: {
@@ -43,14 +51,7 @@ export const getJokeById = async (jokeId, options = {}) => {
   return data
 }
 
-/**
- * Fetch jokes by search term
- * @param {string} searchTerm
- * @param {number} [page]
- * @param {RequestInit} [options]
- * @returns {Promise<JokeSearchResponse>}
- */
-export const getJokeSearch = async (searchTerm, page = 1, options = {}) => {
+export const getJokeSearch = async (searchTerm: string, page = 1, options: RequestInit = {}): Promise<JokeSearchResponse> => {
   const response = await fetch(`${baseUrl}search?term=${searchTerm}&page=${page}&limit=${JOKES_PER_PAGE}`, {
     ...options,
     headers: {

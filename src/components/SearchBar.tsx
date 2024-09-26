@@ -1,13 +1,16 @@
-import { Form } from 'react-router-dom'
+import { Form, type FormProps } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import InputGroup from 'react-bootstrap/InputGroup'
+import type { ComponentProps } from 'react'
 
-/** @import { SearchBarProps } from '../../types/props' */
+type SearchBarProps = FormProps & {
+  value?: string
+  onChange?: ComponentProps<'input'>['onChange']
+  name?: string
+  defaultValue?: string
+}
 
-/**
- * @param {SearchBarProps} props
- */
-const SearchBar = ({ value, onChange, name, defaultValue, ...props }) => {
+const SearchBar = ({ value, onChange, name, defaultValue, ...props }: SearchBarProps) => {
   return (
     <Form navigate {...props}>
       <InputGroup className="w-100">

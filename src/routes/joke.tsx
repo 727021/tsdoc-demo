@@ -7,14 +7,12 @@ import Stack from 'react-bootstrap/Stack'
 import Spinner from 'react-bootstrap/Spinner'
 import { TwitterX, Image } from 'react-bootstrap-icons'
 import { getJokeById } from '../utils/api'
-
-/** @import { JokeResponse } from '../../types/api' */
+import type { JokeResponse } from '../utils/api'
 
 const Joke = () => {
   const params = useParams()
 
-  /** @type {ReturnType<typeof useState<null | JokeResponse>>} */
-  const [joke, setJoke] = useState(null)
+  const [joke, setJoke] = useState<JokeResponse>(null)
 
   useEffect(() => {
     (async () => {

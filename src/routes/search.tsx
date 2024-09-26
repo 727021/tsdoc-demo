@@ -5,16 +5,15 @@ import Pagination from 'react-bootstrap/Pagination'
 import ListGroup from 'react-bootstrap/ListGroup'
 import SearchBar from '../components/SearchBar'
 import { getJokeSearch } from '../utils/api'
+import type { JokeSearchResponse } from '../utils/api'
 
-/**
- * @import { JokeSearchResponse } from '../../types/api'
- * @import { PaginationItemProps } from '../../types/props'
- */
+type PaginationItemProps = {
+  query: string
+  page: number
+  active: boolean
+}
 
-/**
- * @param {PaginationItemProps} props
- */
-const PaginationItem = ({ query, page, active }) => {
+const PaginationItem = ({ query, page, active }: PaginationItemProps) => {
   if (active) {
     return (
       <li className="page-item active">
@@ -40,8 +39,7 @@ const Search = () => {
   const query = params.get('query')
   const page = parseInt(params.get('page') || '1', 10)
 
-  /** @type {ReturnType<typeof useState<null | JokeSearchResponse>>} */
-  const [searchResult, setSearchResult] = useState(null)
+  const [searchResult, setSearchResult] = useState<JokeSearchResponse>(null)
 
   useEffect(() => {
     (async () => {
