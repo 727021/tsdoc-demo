@@ -7,10 +7,8 @@ import SearchBar from '../components/SearchBar'
 import { getJokeSearch } from '../utils/api'
 
 /**
- * @typedef {object} PaginationItemProps
- * @property {string} query
- * @property {number} page
- * @property {boolean} active
+ * @import { JokeSearchResponse } from '../../types/api'
+ * @import { PaginationItemProps } from '../../types/props'
  */
 
 /**
@@ -42,7 +40,7 @@ const Search = () => {
   const query = params.get('query')
   const page = parseInt(params.get('page') || '1', 10)
 
-  /** @type {ReturnType<typeof useState<null | import('../utils/api').JokeSearchResponse>>} */
+  /** @type {ReturnType<typeof useState<null | JokeSearchResponse>>} */
   const [searchResult, setSearchResult] = useState(null)
 
   useEffect(() => {

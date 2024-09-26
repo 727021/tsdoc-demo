@@ -8,10 +8,12 @@ import Spinner from 'react-bootstrap/Spinner'
 import { TwitterX, Image } from 'react-bootstrap-icons'
 import { getJokeById } from '../utils/api'
 
+/** @import { JokeResponse } from '../../types/api' */
+
 const Joke = () => {
   const params = useParams()
 
-  /** @type {ReturnType<typeof useState<null | import('../utils/api').JokeResponse>>} */
+  /** @type {ReturnType<typeof useState<null | JokeResponse>>} */
   const [joke, setJoke] = useState(null)
 
   useEffect(() => {

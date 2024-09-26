@@ -4,31 +4,7 @@ const userAgent = 'TSDoc Demo (https://github.com/727021/tsdoc-demo)'
 
 const JOKES_PER_PAGE = 10
 
-/**
- * @typedef {object} Joke
- * @property {string} id
- * @property {string} joke
- */
-
-/**
- * @typedef {object} JokeResponse
- * @property {string} id
- * @property {string} joke
- * @property {number} status
- */
-
-/**
- * @typedef {object} JokeSearchResponse
- * @property {number} current_page
- * @property {number} limit
- * @property {number} next_page
- * @property {number} previous_page
- * @property {string} search_term
- * @property {number} status
- * @property {number} total_jokes
- * @property {number} total_pages
- * @property {Joke[]} results
- */
+/** @import { JokeResponse, JokeSearchResponse } from '../../types/api' */
 
 /**
  * Fetch a random joke

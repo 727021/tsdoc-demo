@@ -7,8 +7,10 @@ import { ArrowClockwise } from 'react-bootstrap-icons'
 import { getJoke } from '../utils/api'
 import SearchBar from '../components/SearchBar'
 
+/** @import { JokeResponse } from '../../types/api' */
+
 const Index = () => {
-  /** @type {ReturnType<typeof useState<null | import('../utils/api').JokeResponse>>} */
+  /** @type {ReturnType<typeof useState<null | JokeResponse>>} */
   const [joke, setJoke] = useState(null)
 
   useEffect(() => {
