@@ -3,15 +3,15 @@ import Button from 'react-bootstrap/Button'
 import InputGroup from 'react-bootstrap/InputGroup'
 
 /**
- * @typedef {import('react').ComponentProps<'form'>} SearchBarProps
+ * @typedef {object} SearchBarProps
  * @property {string} [value]
- * @property {function} [onChange]
+ * @property {import('react').ComponentProps<'input'>['onChange']} [onChange]
  * @property {string} [name]
  * @property {string} [defaultValue]
  */
 
 /**
- * @param {SearchBarProps} props 
+ * @param {SearchBarProps & import('react-router-dom').FormProps} props
  */
 const SearchBar = ({ value, onChange, name, defaultValue, ...props }) => {
   return (

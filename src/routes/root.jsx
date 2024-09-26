@@ -9,7 +9,7 @@ const Root = () => {
     <div className="d-flex flex-column min-vh-100">
       <Navbar className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand href="/" as={Link}>DadJS</Navbar.Brand>
+          <Navbar.Brand to="/" as={Link}>DadJS</Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <Nav>

@@ -11,6 +11,7 @@ import { getJokeById } from '../utils/api'
 const Joke = () => {
   const params = useParams()
 
+  /** @type {ReturnType<typeof useState<null | import('../utils/api').JokeResponse>>} */
   const [joke, setJoke] = useState(null)
 
   useEffect(() => {

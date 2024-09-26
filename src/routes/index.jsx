@@ -8,6 +8,7 @@ import { getJoke } from '../utils/api'
 import SearchBar from '../components/SearchBar'
 
 const Index = () => {
+  /** @type {ReturnType<typeof useState<null | import('../utils/api').JokeResponse>>} */
   const [joke, setJoke] = useState(null)
 
   useEffect(() => {

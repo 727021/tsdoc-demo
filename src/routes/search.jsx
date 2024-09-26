@@ -6,6 +6,16 @@ import ListGroup from 'react-bootstrap/ListGroup'
 import SearchBar from '../components/SearchBar'
 import { getJokeSearch } from '../utils/api'
 
+/**
+ * @typedef {object} PaginationItemProps
+ * @property {string} query
+ * @property {number} page
+ * @property {boolean} active
+ */
+
+/**
+ * @param {PaginationItemProps} props
+ */
 const PaginationItem = ({ query, page, active }) => {
   if (active) {
     return (
@@ -32,6 +42,7 @@ const Search = () => {
   const query = params.get('query')
   const page = parseInt(params.get('page') || '1', 10)
 
+  /** @type {ReturnType<typeof useState<null | import('../utils/api').JokeSearchResponse>>} */
   const [searchResult, setSearchResult] = useState(null)
 
   useEffect(() => {
@@ -40,8 +51,6 @@ const Search = () => {
       setSearchResult(newResults)
     })()
   }, [query, page])
-
-  console.log(searchResult)
 
   return (
     <Stack gap={2} className="align-items-center w-50 mx-auto">
